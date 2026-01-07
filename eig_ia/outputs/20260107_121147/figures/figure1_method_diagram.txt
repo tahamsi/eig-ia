@@ -1,0 +1,1 @@
+Method overview: Observation -> Question generation -> EIG selection and gate -> Prediction.

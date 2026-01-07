@@ -1,0 +1,45 @@
+dataset:
+  name: art
+  split: dev
+  max_examples: 200
+mode: oracle
+models:
+  question_model:
+    type: hf
+    name_or_path: distilgpt2
+    decoding:
+      max_new_tokens: 32
+      temperature: 0.7
+      top_p: 0.9
+      do_sample: true
+  answer_model:
+    type: hf
+    name_or_path: distilgpt2
+    decoding:
+      max_new_tokens: 32
+      temperature: 0.7
+      top_p: 0.9
+      do_sample: true
+  scorer_model:
+    type: hf
+    name_or_path: distilgpt2
+    decoding:
+      max_new_tokens: 1
+      temperature: 0.0
+      do_sample: false
+eig:
+  K_questions: 2
+  M_answers: 5
+  estimator: entropy
+gating:
+  enabled: true
+  tau: 0.7
+  gamma: 0.05
+evaluation:
+  seed: 42
+  bootstrap:
+    n: 1000
+    alpha: 0.05
+logging:
+  out_dir: outputs
+  save_prompts: true

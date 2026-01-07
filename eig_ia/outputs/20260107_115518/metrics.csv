@@ -1,0 +1,2 @@
+dataset,method,accuracy,eig,prior_entropy,posterior_entropy,delta_entropy,latency_mean,latency_median,tokens_mean,tokens_total,em,f1,ece
+art,eig_ia,0.4950,0.0336,0.6829,0.6494,0.0335,0.2333,0.2150,489.6400,97928.0000,0.0000,0.0000,0.1441

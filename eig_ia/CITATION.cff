@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: "EIG-Guided Interactive Abduction (EIG-IA)"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - name: "EIG-IA Authors"
+version: 0.1.0
+date-released: "2025-01-07"

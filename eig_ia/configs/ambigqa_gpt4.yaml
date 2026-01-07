@@ -1,0 +1,40 @@
+dataset:
+  name: ambigqa
+  split: dev
+  max_examples: 200
+mode: simulator
+models:
+  question_model:
+    type: api
+    name_or_path: gpt-4
+    decoding:
+      max_new_tokens: 64
+      temperature: 0.7
+  answer_model:
+    type: api
+    name_or_path: gpt-4
+    decoding:
+      max_new_tokens: 64
+      temperature: 0.7
+  scorer_model:
+    type: api
+    name_or_path: gpt-4
+    decoding:
+      max_new_tokens: 1
+      temperature: 0.0
+eig:
+  K_questions: 3
+  M_answers: 5
+  estimator: entropy
+gating:
+  enabled: true
+  tau: 0.7
+  gamma: 0.05
+evaluation:
+  seed: 42
+  bootstrap:
+    n: 1000
+    alpha: 0.05
+logging:
+  out_dir: outputs
+  save_prompts: true

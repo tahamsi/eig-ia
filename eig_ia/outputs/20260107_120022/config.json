@@ -1,0 +1,60 @@
+{
+  "dataset": {
+    "max_examples": 200,
+    "name": "ambigqa",
+    "split": "dev"
+  },
+  "eig": {
+    "K_questions": 3,
+    "M_answers": 5,
+    "estimator": "entropy"
+  },
+  "evaluation": {
+    "bootstrap": {
+      "alpha": 0.05,
+      "n": 1000
+    },
+    "seed": 42
+  },
+  "gating": {
+    "enabled": true,
+    "gamma": 0.05,
+    "tau": 0.7
+  },
+  "logging": {
+    "out_dir": "outputs",
+    "save_prompts": true
+  },
+  "mode": "oracle",
+  "models": {
+    "answer_model": {
+      "decoding": {
+        "do_sample": true,
+        "max_new_tokens": 32,
+        "temperature": 0.7,
+        "top_p": 0.9
+      },
+      "name_or_path": "distilgpt2",
+      "type": "hf"
+    },
+    "question_model": {
+      "decoding": {
+        "do_sample": true,
+        "max_new_tokens": 32,
+        "temperature": 0.7,
+        "top_p": 0.9
+      },
+      "name_or_path": "distilgpt2",
+      "type": "hf"
+    },
+    "scorer_model": {
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens": 1,
+        "temperature": 0.0
+      },
+      "name_or_path": "distilgpt2",
+      "type": "hf"
+    }
+  }
+}
